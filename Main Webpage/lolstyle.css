@@ -1,0 +1,24 @@
+#header {
+    margin: 0 auto;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+}
+
+.navbar-header{
+  font-family: cursive;
+}
+
+#particles-js{
+  height: 100vh;
+  background:firebrick;
+}
+
+body{
+  margin:0;
+  font: normal 16px Arial, Helvetica, sand-serif;
+  color:#333;
+}
