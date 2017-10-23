@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="lolstyle.css">
   </head>
@@ -73,7 +74,31 @@
                 }, 1000);
                 $(this).addClass('active');
     });
-  });
+
+    var p1=$('#p1').position().top,p2=$('#p2').position().top,p3=$('#p3').position().top,p4=$('#p4').position().top;
+    var prevScroll = 0;
+    $(window).on("scroll", function () {
+       var $this = $(this),
+           $statusText = $("p > span"),
+           currScroll = $this.scrollTop();
+       if (currScroll > prevScroll){
+          if((($('#p1').position().top)>20)&&(($('#p4').position().top)>23)&&(($('#p2').position().top)>25)&&(($('#p3').position().top)>27)){
+          $("#p1").animate({top: "-=2"}, 10);
+          $("#p4").animate({top: "-=3"}, 10);
+          $("#p2").animate({top: "-=4"}, 10);
+          $("#p3").animate({top: "-=5"}, 10);
+        }
+      } else{
+         if((($('#p1').position().top)<p1)&&(($('#p4').position().top)<p4)&&(($('#p2').position().top)<p2)&&(($('#p3').position().top)<p3)){
+          $("#p1").animate({top: "+=3"}, 10);
+          $("#p4").animate({top: "+=5"}, 10);
+          $("#p2").animate({top: "+=7"}, 10);
+          $("#p3").animate({top: "+=9"}, 10);
+        }
+        }
+       prevScroll = currScroll;
+     });
+ });
 </script>
   </body>
 </html>
