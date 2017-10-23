@@ -8,8 +8,8 @@
     left: 0px;
 }
 
-.wrapper{
-  padding-top: 50px;
+header{
+  z-index: 1;
 }
 .navbar-header{
   font-family: cursive;
@@ -43,6 +43,67 @@ body{
   background-color: yellow;
 }
 
+.active{
+  color: white;
+}
+
 #about{
   background-color: firebrick;
+}
+
+.navitem:hover{
+  background-color: #C0C0C0;
+}
+
+#particles-js div{
+  position: absolute;
+  left: 50%;
+}
+
+#particles-js div p{
+  backface-visibility: visible;
+  position: relative;
+  left: -50%;
+  color: white;
+  font-family: impact;
+  -webkit-animation: mymove 10s infinite; /* Chrome, Safari, Opera */
+    animation: mymove 10s infinite;
+}
+
+#p1{
+  top: 10vh;
+  font-size: 120px;
+}
+
+#p4{
+  top: 30vh;
+  font-size: 100px;
+}
+
+#p2{
+  top: 48vh;
+  font-size: 200px;
+}
+
+#p3{
+  top: 80vh;
+  font-size: 140px;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+  0%{color: white;}
+  34%{color: pink;}
+  51%{color: skyblue;}
+  68%{color: pink;}
+  100%{color: white;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+  0%{color: white;}
+  34%{color: pink;}
+  51%{color: skyblue;}
+  68%{color: pink;}
+  100%{color: white;}
 }

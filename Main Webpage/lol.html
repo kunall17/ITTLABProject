@@ -21,13 +21,13 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a href="#" class="navbar-brand">our PORTFOLIO</a>
+              <a href="#" class="navbar-brand">  PORTFOLIO  </a>
           </div>
 
           <!-- Menu Items -->
           <div class="collapse navbar-collapse" id="mainNavBar">
               <ul class="nav navbar-nav">
-                  <li class="active navitem"><a href="#particles-js">HOME</a></li>
+                  <li class="navitem"><a href="#particles-js">HOME</a></li>
                   <li class="navitem"><a href="#about">ABOUT</a></li>
                   <li class="navitem"><a href="#projects">PROJECTS</a></li>
                   <li class="navitem"><a href="#testimonials">TESTIMONIALS</a></li>
@@ -47,7 +47,11 @@
   particlesJS.load('particles-js', 'particles.json', function(){
     console.log('particles.json loaded...');
   });
-  </script></div>
+  </script>
+  <div id="p1"><p>WELCOME TO</p></div>
+  <div id="p4"><p>THE</p></div>
+  <div id="p2"><p>AWESOME</p></div>
+  <div id="p3"><p>PORTFOLIO</p></div></div>
   <div class="section" id="about">
   </div>
   <div class="section" id="projects">
@@ -66,7 +70,8 @@
                 var fromTop = $(sectionId).offset().top;
                 $('html, body').animate({
                     scrollTop: fromTop
-                }, 500);
+                }, 1000);
+                $(this).addClass('active');
     });
   });
 </script>
