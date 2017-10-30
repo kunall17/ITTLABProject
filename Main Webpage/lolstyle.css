@@ -48,7 +48,7 @@ body{
 }
 
 #about{
-  background-color: #AEA8D3;
+  background-color: black;
 }
 
 .navitem:hover{
@@ -221,7 +221,11 @@ body{
 
 .imgcenter{
   height: 50%;
-  width: auto;
+  width: 0 auto;
   margin: 0 auto;
   padding: 10px;
+}
+
+#about div h1{
+  color: white;
 }
