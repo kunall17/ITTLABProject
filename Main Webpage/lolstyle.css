@@ -35,8 +35,8 @@ body{
   background-color: red;
 }
 
-#testimonials{
-  background-color: blue;
+#clients{
+  background-color: #AEA8D3;
 }
 
 #contact{
@@ -48,7 +48,7 @@ body{
 }
 
 #about{
-  background-color: firebrick;
+  background-color: #AEA8D3;
 }
 
 .navitem:hover{
@@ -91,6 +91,9 @@ body{
 
 /* Extra small devices (phones, up to 480px) */
 @media screen and (max-width: 767px) {
+  #about div{
+    height: 30vh;
+  }
 
   #p1{
     top: 10vh;
@@ -120,6 +123,9 @@ body{
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991px) {
 
+#about div{
+    height: 30vh;
+}
   #p1{
     top: 10vh;
     font-size: 50px;
@@ -146,7 +152,10 @@ body{
 
 }
 /* tablets/desktops and up ----------- */
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1249) {
+  #about div{
+      height: 30vh;
+  }
 
   #p1{
     top: 10vh;
@@ -174,7 +183,11 @@ body{
 
 }
 /* large desktops and up ----------- */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1250px) {
+
+  #about div{
+    height: 94vh;
+  }
 
   #p1{
     top: 10vh;
@@ -200,4 +213,11 @@ body{
     z-index: 4;
   }
 
+}
+
+.imgcenter{
+  height: 50%;
+  width: auto;
+  margin: 0 auto;
+  padding: 10px;
 }
