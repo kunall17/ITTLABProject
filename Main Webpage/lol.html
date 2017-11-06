@@ -78,14 +78,14 @@
   </div>
   <div class="section" id="projects">
     <div class="box1 container-fluid">
-    <div class="col-md-4"><img src="robot.png" class="pmc img-circle img-responsive"alt=""></div>
-    <div class="col-md-4"><img src="ios.png" class="pmc img-circle img-responsive"alt="" ></div>
-    <div class="col-md-4"><img src="windowsphone.png" class="pmc img-responsive img01" alt=""></div>
+    <div class="col-md-4"><img src="robot.png" id="android" class="pmc popper img-circle img-responsive"alt="" data-popbox="pop1"></div>
+    <div class="col-md-4"><img src="ios.png" id="ios"class="pmc popper img-circle img-responsive"alt="" data-popbox="pop1"></div>
+    <div class="col-md-4"><img src="windowsphone.png" id="wp" class="pmc popper img-responsive img01" alt="" data-popbox="pop1"></div>
   </div>
     <div class="box2 container-fluid">
-    <div class="col-md-4"><img src="apple.png" class="pmc img-circle img-responsive"alt=""></div>
-    <div class="col-md-4"><img src="windows.png" class="pmc img-responsive"alt="" ></div>
-    <div class="col-md-4"><img src="linux.png" class="pmc img-circle img-responsive img01"alt=""></div>
+    <div class="col-md-4"><img src="apple.png" id="apple"class="pmc popper img-circle img-responsive"alt="" data-popbox="pop1"></div>
+    <div class="col-md-4"><img src="windows.png" id="windows"class="pmc popper img-responsive"alt="" data-popbox="pop1"></div>
+    <div class="col-md-4"><img src="linux.png" id="linux"class="pmc popper img-circle img-responsive img01"alt="" data-popbox="pop1"></div>
     </div>
   </div>
   <div class="section" id="clients">
@@ -93,6 +93,9 @@
   <div class="section" id="contact">
   </div>
   <footer id="footer"></footer>
+  <div id="pop1" class="popbox">
+
+</div>
 </div>
 <script>
   $(document).ready(function(){
@@ -129,6 +132,92 @@
         }
        prevScroll = currScroll;
      });
+var android='<h1> Android </h1> <ul> <li>ION AUTO LOGIN </li> <li> ZULIP </li> <li> Crypto Faucet </li> <li> PAYTM </li> </ul><br><p style="font-size:20px; color:blue"> All these repositories are on our Github profiles </p>';
+var ios='<h1> ios </h1> <ul> <li>ION AUTO LOGIN </li> <li> ZULIP </li> <li> ShareIT </li> <li> PAYTM </li> </ul><br><p style="font-size:20px; color:blue"> All these repositories are on our Github profiles </p>';
+var wp='<h1> Windows Phone </h1> <ul> <li>Flappy Bird</li> <li> PixelR </li> <li> Bhim </li> <li> TEZ <li> </ul><br><p style="font-size:12px; color:blue"> All these repositories are on our Github profiles </p>';
+var apple='<h1> OS X </h1> <ul> <li>Text-Builder </li> <li> Code-Builder </li> <li> App Store </li> <li> Pages </li></ul><br><p style="font-size:20px; color:blue"> All these repositories are on our Github profiles </p>';
+var windows='<h1> Windows XP and above </h1> <ul> <li>Steam</li> <li> FIFA18 </li> <li> Cyberlink Power </li> <li> Video Cutter</li></ul><br><p style="font-size:20px; color:blue"> All these repositories are on our Github profiles </p>';
+var linux='<h1> LINUX </h1> <ul> <li>Text Wrangler</li> <li> Sublime Text </li> <li> Mozilla Firefox </li> </ul><br><p style="font-size:20px; color:blue"> All these repositories are on our Github profiles </p>';
+
+var moveLeft = 0;
+var moveDown = 0;
+$('.popper').hover(function (e) {
+
+
+  var abc=$(this).attr('id');
+
+  if(abc=="android")
+    document.getElementById('pop1').innerHTML=android;
+  else if(abc=="ios")
+    document.getElementById('pop1').innerHTML=ios;
+  else if(abc=="wp")
+    document.getElementById('pop1').innerHTML=wp;
+  else if(abc=="apple")
+    document.getElementById('pop1').innerHTML=apple;
+  else if(abc=="windows")
+    document.getElementById('pop1').innerHTML=windows;
+  else
+    document.getElementById('pop1').innerHTML=linux;
+
+    console.log('seehere', abc);
+
+    var target = '#' + ($(this).attr('data-popbox'));
+    $(target).show();
+    moveLeft = $(this).outerWidth();
+    moveDown = ($(target).outerHeight() / 2);
+}, function () {
+  var abc=$(this).attr('id');
+  if(abc=="android")
+    document.getElementById('pop1').innerHTML=android;
+  else if(abc=="ios")
+    document.getElementById('pop1').innerHTML=ios;
+    else if(abc=="wp")
+      document.getElementById('pop1').innerHTML=wp;
+      else if(abc=="apple")
+        document.getElementById('pop1').innerHTML=apple;
+        else if(abc=="windows")
+          document.getElementById('pop1').innerHTML=windows;
+          else
+            document.getElementById('pop1').innerHTML=linux;
+    var target = '#' + ($(this).attr('data-popbox'));
+    if (!($(".popper").hasClass("show"))) {
+        $(target).hide();
+    }
+});
+
+$('.popper').mousemove(function (e) {
+    var target = '#' + ($(this).attr('data-popbox'));
+
+    leftD = e.pageX + parseInt(moveLeft);
+    maxRight = leftD + $(target).outerWidth();
+    windowLeft = $(window).width() - 40;
+    windowRight = 0;
+    maxLeft = e.pageX - (parseInt(moveLeft) + $(target).outerWidth() + 20);
+
+    if (maxRight > windowLeft && maxLeft > windowRight) {
+        leftD = maxLeft;
+    }
+
+    topD = e.pageY - parseInt(moveDown);
+    maxBottom = parseInt(e.pageY + parseInt(moveDown) + 20);
+    windowBottom = parseInt(parseInt($(document).scrollTop()) + parseInt($(window).height()));
+    maxTop = topD;
+    windowTop = parseInt($(document).scrollTop());
+    if (maxBottom > windowBottom) {
+        topD = windowBottom - $(target).outerHeight() - 20;
+    } else if (maxTop < windowTop) {
+        topD = windowTop + 20;
+    }
+
+    $(target).css('top', topD).css('left', leftD);
+});
+$('.popper').click(function (e) {
+    var target = '#' + ($(this).attr('data-popbox'));
+    if (!($(this).hasClass("show"))) {
+        $(target).show();
+    }
+    $(this).toggleClass("show");
+});
  });
 </script>
   </body>
