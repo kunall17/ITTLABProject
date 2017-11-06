@@ -40,7 +40,7 @@ body{
 }
 
 #contact{
-  background-color: yellow;
+  background-color: #483930;
 }
 
 .active{
@@ -91,11 +91,11 @@ body{
 
 /* Extra small devices (phones, up to 480px) */
 @media screen and (max-width: 767px) {
-  #about div{
+  #about div,#contact div{
     height: 30vh;
     text-align: center;
   }
-  #about div h1{
+  #about div h1,#contact div h1,#contact div h2{
     margin-top: -7px;
     color: white;
     font-size: 15px;
@@ -141,11 +141,11 @@ body{
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 999px) {
 
-#about div{
+#about div,#contact div{
     height: 30vh;
     text-align: center;
 }
-#about div h1{
+#about div h1,#contact div h1,#contact div h2{
   margin-top: -10px;
   color: white;
   font-size: 25px;
@@ -190,7 +190,7 @@ body{
 }
 /* tablets/desktops and up ----------- */
 @media (min-width: 1000px) and (max-width: 1249px) {
-  #about div{
+  #about div,#contact div{
       height: 94vh;
       text-align: center;
   }
@@ -247,11 +247,11 @@ body{
 /* large desktops and up ----------- */
 @media (min-width:1250px) and (max-width: 8000px) {
 
-  #about div{
+  #about div,#contact div{
     height: 94vh;
     text-align: center;
   }
-  #about div h1{
+  #about div h1,#contact div h1,#contact div h2{
     color: white;
     font-size: 47px;
   }
@@ -350,4 +350,8 @@ body{
     width: 100%;
     margin: -10px 0px 8px -10px;
     padding: 5px 10px;
+}
+
+textarea{
+  max-width: 100%;
 }
